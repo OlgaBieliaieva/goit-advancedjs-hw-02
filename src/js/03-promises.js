@@ -1,5 +1,5 @@
 import iziToast from 'izitoast';
-import "izitoast/dist/css/iziToast.min.css";
+import 'izitoast/dist/css/iziToast.min.css';
 
 const refs = {
   form: document.querySelector('.form'),
@@ -21,10 +21,14 @@ function formHandler(delay, userStep, userAmount) {
   for (let i = 1; i <= userAmount; i += 1) {
     createPromise(i, delay)
       .then(({ position, delay }) => {
-        iziToast.success({message: `Fulfilled promise ${position} in ${delay}ms`,});
+        iziToast.success({
+          message: `Fulfilled promise ${position} in ${delay}ms`,
+        });
       })
       .catch(({ position, delay }) => {
-        iziToast.error({message: `Rejected promise ${position} in ${delay}ms`,});
+        iziToast.error({
+          message: `Rejected promise ${position} in ${delay}ms`,
+        });
       });
     delay += userStep;
   }
@@ -42,5 +46,3 @@ function createPromise(position, delay) {
     }, delay);
   });
 }
-
-

@@ -65,7 +65,7 @@ img {
 }
 .form {
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
   gap: 24px;
   padding: 40px;
 }
